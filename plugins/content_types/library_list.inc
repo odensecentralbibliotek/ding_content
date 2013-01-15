@@ -47,7 +47,7 @@ function ding_content_library_list_content_type_render($subtype, $conf, $panel_a
   }
 
   uasort($nodes, 'ding_content_library_list_sort_title');
-  $items = array($conf['type'] . $suffix => t('All libraries'));
+  $items = array($conf['type'] . $suffix . '/all' => t('All libraries'));
 
   foreach ($nodes as $node) {
     $uri = entity_uri('node', $node);
@@ -114,8 +114,8 @@ function ding_content_library_list_content_type_edit_form($form, &$form_state) {
     '#type' => 'select',
     '#title' => t('Type of list to link to'),
     '#options' => array(
-      'news' => t('News'),
-      'events' => t('Events'),
+      'news-category' => t('News'),
+      'event-category' => t('Events'),
     ),
     '#default_value' => !empty($conf['type']) ? $conf['type'] : 'news',
     '#required' => TRUE,
