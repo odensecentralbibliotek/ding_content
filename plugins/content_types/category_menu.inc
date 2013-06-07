@@ -39,7 +39,7 @@ function ding_content_category_menu_content_type_render($subtype, $conf, $panel_
   $items = array(l(t('All categories'), $base . '/all', $options));
 
   $vocabulary = taxonomy_vocabulary_machine_name_load('category');
-  $terms = taxonomy_get_tree($vocabulary->vid, 0, NULL, TRUE);
+  $terms = taxonomy_get_tree($vocabulary->vid);
 
   foreach ($terms as $term) {
     if ($selected_term && $selected_term->tid == $term->tid) {
@@ -48,8 +48,7 @@ function ding_content_category_menu_content_type_render($subtype, $conf, $panel_
     else {
       $options = array();
     }
-    $uri = entity_uri('taxonomy_term', $term);
-    $items[] = l($term->name, $uri['path'], $options);
+    $items[] = l($term->name, $base . '/' . $term->tid, $options);
   }
   $block->content = theme('item_list', array('items' => $items));
 
@@ -66,8 +65,8 @@ function ding_content_category_menu_content_type_edit_form($form, &$form_state) 
     '#type' => 'select',
     '#title' => t('Type of list to link to'),
     '#options' => array(
-      'news-category' => t('News'),
-      'event-category' => t('Events'),
+      'news' => t('News'),
+      'events' => t('Events'),
     ),
     '#default_value' => !empty($conf['type']) ? $conf['type'] : 'news',
     '#required' => TRUE,
