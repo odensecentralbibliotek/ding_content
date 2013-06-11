@@ -22,7 +22,7 @@ function ding_content_filter_default_formats() {
         'weight' => -10,
         'status' => 1,
         'settings' => array(
-          'allowed_html' => '<a> <p> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <table> <tr> <th> <td>',
+          'allowed_html' => '<h1> <h2> <h3> <h4> <h5> <h6> <table> <thead> <tbody> <td> <tr> <th> <a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <p> <br> <div>',
           'filter_html_help' => 1,
           'filter_html_nofollow' => 0,
         ),
