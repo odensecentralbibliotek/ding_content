@@ -52,7 +52,6 @@ function ding_content_wysiwyg_default_profiles() {
           'FontSize' => 1,
           'Styles' => 1,
           'Table' => 1,
-          'Smiley' => 1,
           'Iframe' => 1,
         ),
         'drupal' => array(
