@@ -20,9 +20,9 @@ function ding_content_library_list_content_type_render($subtype, $conf, $panel_a
   $selected_url = NULL;
   $suffix = '';
   if ($conf['type'] == 'news') {
-      $node_type = 'nyheder';
+      $node_type = 'news-category';
   } elseif ($conf['type'] == 'events') {
-    $node_type = 'arrangementer';
+    $node_type = 'event-category';
   }
 
   if (isset($context[0]->data)) {
@@ -33,7 +33,7 @@ function ding_content_library_list_content_type_render($subtype, $conf, $panel_a
   if (isset($context[1]->data)) {
     $library = $context[1]->data;
     $uri = entity_uri('node', $library);
-    $selected_url =  'bibliotek/' . $library->nid . '/' . $node_type  . $suffix;
+    $selected_url =  'node/' . $library->nid . '/' . $node_type  . $suffix;
   }
 
   $groups = og_load_multiple(FALSE, array('entity_type' => 'node'));
@@ -57,7 +57,7 @@ function ding_content_library_list_content_type_render($subtype, $conf, $panel_a
   }
 
   foreach ($nodes as $node) {
-    $uri =  'bibliotek/' . $node->nid . '/' . $node_type  . $suffix;
+    $uri =  'node/' . $node->nid . '/' . $node_type  . $suffix;
     $items[$uri] = $node->title;
   }
 
