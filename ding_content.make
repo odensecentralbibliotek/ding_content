@@ -22,7 +22,7 @@ projects[ctools][version] = "1.3"
 projects[ctools][patch][0] = "http://drupal.org/files/ctools-n1925018-12.patch"
 
 projects[entity][subdir] = "contrib"
-projects[entity][version] = "1.1"
+projects[entity][version] = "1.5"
 
 projects[features][subdir] = "contrib"
 projects[features][version] = "2.0-beta2"
@@ -50,7 +50,7 @@ projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
 
 projects[views][subdir] = "contrib"
-projects[views][version] = "3.7"
+projects[views][version] = "3.8"
 
 projects[workbench][subdir] = "contrib"
 projects[workbench][version] = "1.2"
