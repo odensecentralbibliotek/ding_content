@@ -56,7 +56,7 @@ projects[workbench][subdir] = "contrib"
 projects[workbench][version] = "1.2"
 
 projects[wysiwyg][subdir] = "contrib"
-projects[wysiwyg][version] = "2.2"
+projects[wysiwyg][version] = "2.x-dev"
 
 ; Libraries
 libraries[ckeditor][download][type] = "get"
